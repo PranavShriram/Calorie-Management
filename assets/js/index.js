@@ -520,13 +520,14 @@ function setup()
         var person_name = formData.get('name');
         user = person_name;
         var gender = formData.get('gender').toLowerCase();
-        var age = parseInt(formData.get('age'));
-        var height = parseInt(formData.get('height'));
-        var weight = parseInt(formData.get('weight'));
+        var age1 = formData.get('age');
+        var height1 = formData.get('height');
+        var weight1 = formData.get('weight');
         var activityFactor_string = (formData.get('activityFactor'));
         var activityFactor
       
          console.log(gender);
+         console.log(activityFactor_string);
         if(activityFactor_string == "little")
          activityFactor = 1.2;
         else if(activityFactor_string == "light")
@@ -541,18 +542,21 @@ function setup()
          console.log(activityFactor);
           
          if(gender != "male" && gender != "female")
-          genderFlag = 1;
+           genderFlag = 1;
 
-        if(person_name == "" || gender == "" || age == "" || height == "" ||weight == ""||activityFactor == ""||genderFlag)
+      
+       if(person_name == "" || age1 == "" || height1 == "" ||weight1 == ""||!activityFactor_string )
           { 
-             
-              if(genderFlag == 1)
-               alert("Fill proper gender");
-              else 
+  
               alert("Enter all details");    
-          }   
+          } 
+        else if(genderFlag)
+          alert("Fill proper gender");   
         else
-        {  
+        {   
+          age = parseInt(age1);
+          height = parseInt(height1);
+          weight = parseInt(weight1);
           gender = gender.charAt(0).toUpperCase() + gender.slice(1); 
           console.log(gender);
           flag = 1;
