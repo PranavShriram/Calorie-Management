@@ -13,6 +13,38 @@ var personalDetailsSubmitFlag = 0 ;
 //This implements local storage
 var local_backup  = {};
 
+//Image management
+
+
+window.onresize = window.onload = function()
+{
+    resize();
+}
+
+function resize()
+{
+    var img    = document.querySelector('img');
+        winDim = getWinDim();
+
+
+    img.style.height = winDim.y + "px";
+
+    if (img.offsetWidth > winDim.x)
+    {
+        img.style.height = null;
+        img.style.width = winDim.x + "px";
+    }
+}
+
+function getWinDim()
+{
+    var body = document.documentElement || document.body;
+
+    return {
+        x: window.innerWidth  || body.clientWidth,
+        y: window.innerHeight || body.clientHeight
+    }
+}
 
 //Listener for viewport width changes
 function width(x) {
@@ -915,6 +947,10 @@ function initialize()
 {   
     tot_sum = new row("Total Sum",0,0,0,0,0,0,0,"All");
     diff_row = new row("Remaining",0,0,0,0,0,0,0,"All");
+    
+
+   // body.style.backgroundImg
+    document.querySelector('body').style.backgroundSize = "cover";
     
     var breakfast_table = document.querySelector(".breakfast");
     var lunch_table = document.querySelector(".lunch");

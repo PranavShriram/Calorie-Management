@@ -30,15 +30,18 @@ var pieChart = function(dataPoints,radius,x,y)
                 start_angle = end_angle;
             }
           //Legend
-             ctx.strokeStyle = "black"
+              ctx.fillStyle = "white";
+              ctx.fillRect(580,80,150,300);
+             ctx.fillStyle = "black"
              ctx.font = '30px serif';
-             ctx.strokeText('Legend', 600, 100);
+             ctx.fillText('Legend', 600, 100);
              
              ctx.font = "20px serif"
              for(var i = 0;i < dataPoints.length;i++)
              {     ctx.fillStyle = dataPoints[i].color;
                    ctx.fillRect(600,150+i*50,20,20);
-                   ctx.strokeText(dataPoints[i].label,640,150+50*i+15);
+                   ctx.fillStyle = "black";
+                   ctx.fillText(dataPoints[i].label,640,150+50*i+15);
              }
 
       }

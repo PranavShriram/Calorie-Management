@@ -2,8 +2,11 @@
 body
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
+  background: url("../images/landing.jpg") 0% 0% / cover;
 }
+
+
+
 
 /* navbar Styling */
 
@@ -541,6 +544,10 @@ input[type = "radio"]:checked
    {
        margin-left: 35%;
    }
+   body
+    {
+        background: none;
+    }
 }
 
 .display_none
