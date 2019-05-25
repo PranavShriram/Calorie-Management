@@ -1,0 +1,226 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="assets/css/index.css">
+        
+        <script src = "assets/js/pieChart.js"></script>
+        <script src = "assets/js/index.js"></script>
+        <title>Calcontrol</title>
+    </head>
+    <body onload = "initialize()">
+
+            <div class = "navbar">
+                    <div class = "header"><a href = "#">CalControl</a></div>
+                   
+                    <div class = "navbar-right">
+                        <div class = "get-started"><a href ="index.html">Get Started!</a></div>
+                        <!-- <div class = "analytics"><a href ="analytics.html">Analytics</a></div> -->
+                        <div class = "user">Guest</div>
+                    </div>
+                    <div class="toggle-btn" >
+                       <div>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        </div>  
+                   
+                        <div class = "navbar-right-smallscreen">
+                            <div class = "get-started"><a href ="index.html">Get Started!</a></div>
+                            <!-- <div class = "analytics"><a href ="analytics.html">Analytics</a></div> -->
+                            <div class = "user">Guest</div>
+                        </div>
+                    </div>  
+            </div>
+        <div id="sidebar">
+            
+                   <div class = "menu">
+                    <ul>
+                      <li>Home </li>
+                      <li>Breakfast Table</li>
+                      <li>Lunch Table</li>
+                      <li>Dinner Table</li>
+                      <li>View Analytics</li>
+                    </ul>
+                    </div> 
+        </div>
+
+        <div class = "flash_message">
+
+        </div>
+        
+        <div class = "container">
+
+            <div class = "breakfast table">
+
+                 <div class = "header">Breakfast</div>
+                 <div class = "item_header">Calories</div>
+                 <div class = "item_header">Carbs(in g)</div>
+                 <div class = "item_header">Fats(in g)</div>
+                 <div class = "item_header">Protein(in g)</div>
+                 <div class = "item_header">Sugar(in g)</div>
+                 <div class = "item_header">Sodium(in g)</div>
+                 <div class = "item_header">Water(in L)</div>
+                
+            </div>
+            
+            <button id = "bf_button">Add Entry</button>
+            <div class = "lunch table">
+
+                    <div class = "header">Lunch</div>
+                    <div class = "item_header">Calories(in g)</div>
+                    <div class = "item_header">Carbs(in g)</div>
+                    <div class = "item_header">Fats(in g)</div>
+                    <div class = "item_header">Protein(in g)</div>
+                    <div class = "item_header">Sugar(in g)</div>
+                    <div class = "item_header">Sodium(in g)</div>
+                    <div class = "item_header">Water(in L)</div>
+                 
+               
+            </div>
+            
+            <button id = "ln_button">Add Entry</button>
+            <div class = "dinner table">
+                 
+                    <div class = "header">Dinner</div>
+                    <div class = "item_header">Calories</div>
+                    <div class = "item_header">Carbs(in g)</div>
+                    <div class = "item_header">Fats(in g)</div>
+                    <div class = "item_header">Protein(in g)</div>
+                    <div class = "item_header">Sugar(in g)</div>
+                    <div class = "item_header">Sodium(in g)</div>
+                    <div class = "item_header">Water(in L)</div>
+               
+            </div>
+
+            <button id = "dn_button">Add Entry</button>
+            
+        </div>
+       
+    <form class = "personal_details">
+          <div class = "input_form_personaldetails">
+                <div class = "question">
+                  <div class = "number">1</div>
+                  <div class = "question_text"> Who are you?</div>
+                  <input placeholder="Name" type = "text" name = "name">
+                </div> 
+                <div class = "question">
+                    <div class = "number">2</div>
+                    <div class = "question_text">Are you male or female</div> 
+                    <input placeholder="Male/Female" type = "text" name = "gender">
+                </div> 
+                <div class = "question">
+                    <div class = "number">3</div>
+                    <div class = "question_text">Enter your age</div>
+                    <input placeholder="Age(in years)" type = "number" name = "age">
+                </div> 
+                <div class = "question">
+                    <div class = "number">4</div>
+                    <div class = "question_text">Enter your Height</div>
+                    <input placeholder="Height(in cm)" type = "number" name = "height" >
+                </div> 
+                <div class = "question">
+                    <div class = "number">5</div>
+                    <div class = "question_text">Enter your weight</div>
+                    <input placeholder="Weight(in kg)" type = "number" name = "weight">
+                </div> 
+             
+              </div>
+              <div class = "number out">6</div>
+              <div class = "question_radioButton">How much do you exercise</div>
+            <div class = "activity-factor">
+               <div> <input type="radio" name="activityFactor" value="little"> <div class = "choice">Little exercise</div></div>
+               <div> <input type="radio" name="activityFactor" value="light"> <div class = "choice">Light exercise</div></div>
+               <div> <input type="radio" name="activityFactor" value="moderate"><div class = "choice"> Moderate exercise</div></div>
+               <div><input type="radio" name="activityFactor" value="heavy"><div class = "choice"> Heavy exercise</div></div>
+               <div><input type="radio" name="activityFactor" value="veryheavy"><div class = "choice"> Very Heavy exercise</div></div>
+             </div>
+          
+            <div class = "btn_set">
+              <button class = "Personal_details_button" type = "button">Submit!</button>
+              <button id = "clear" type = "button">Clear</button>
+            </div> 
+    </form>
+        <form class = "input_form">
+                <h2>Add Entry</h2>
+            <div class = "form_name">
+             <h3>Food Item:</h3>   
+            <input id ="foodname" type = "text" name = "name">
+            </div>
+
+            <div class = "form_set1">
+               
+                <div>
+
+                    <h3>Calories:</h3>    
+                    <input id ="calories" type = "number" name = "calories" min = "0">
+                    
+                 </div>
+                 <div>
+                    <h3>Carbs(in g): </h3>
+                    <input id ="carbs" type = "number" name = "carbs" min ="0">
+                </div>
+            </div>   
+
+            <div class = "form_set2">
+            <div>  
+                <h3>Fat(in g): </h3>
+                <input id ="fat" type = "number" name = "fat" min = "0">
+             </div>
+             <div> 
+                <h3>Protein(in g): </h3>
+                <input id ="protein" type = "number" name = "protein" min = "0">
+              </div>  
+            </div>
+
+            <div class = "form_set3">
+                <div>
+                    <h3>Sugar(in g): </h3>   
+                    <input id ="sugar" type = "number" name = "sugar" min = "0">
+                 </div>
+                <div> 
+                    <h3>Sodium(in g): </h3>
+                   <input id ="sodium" type = "number" name = "sodium" min = "0">
+                </div>   
+            </div>
+            <div> 
+                <h3 class = "water_text">Water(in L):</h3>
+               <input id ="water" type = "number" name = "water" min = "0">
+            </div>   
+
+            <button id = "form_submit" type = "button">ADD</button>
+           
+           
+        </form>
+        
+        <div class = "analytics container">
+           <div class = "analytics_heading table">
+             <div class = "header"></div>
+             <div class = "item_header">Calories</div>
+             <div class = "item_header">Carbs(in g)</div>
+             <div class = "item_header">Fats(in g)</div>
+             <div class = "item_header">Protein(in g)</div>
+             <div class = "item_header">Sugar(in g)</div>
+             <div class = "item_header">Sodium(in g)</div>
+             <div class = "item_header">Water(in L)</div>
+            </div> 
+
+            <div class = "total table">
+                <div class = "header">Total</div>
+               
+            </div>
+            <div class = "requirement table">
+                <div class = "header">Requirement</div>
+               
+            </div>
+            <div class = "difference table">
+                <div class = "header">Difference</div>
+               
+            </div>
+        </div>
+        <div class = "canvas_container">
+            <canvas id = "my_canvas">
+
+            </canvas>
+        </div>
+    </body>
+
+</html>
