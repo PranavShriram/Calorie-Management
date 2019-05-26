@@ -12,39 +12,34 @@ var personalDetailsSubmitFlag = 0 ;
 
 //This implements local storage
 var local_backup  = {};
+var local_backup_userdata = {};
 
 //Image management
 
 
-window.onresize = window.onload = function()
+function fillData()
 {
-    resize();
-}
-
-function resize()
-{
-    var img    = document.querySelector('img');
-        winDim = getWinDim();
-
-
-    img.style.height = winDim.y + "px";
-
-    if (img.offsetWidth > winDim.x)
-    {
-        img.style.height = null;
-        img.style.width = winDim.x + "px";
+  var x = JSON.parse(localStorage.getItem('personal_details'));
+  console.log(x);
+  if(x)
+  { 
+  for(var i = 0;i < x.length;i++)
+  {
+    if(x[i].user == document.querySelector('#person_name').value)
+    { 
+      console.log(x[i]);
+      document.querySelector('#person_age').value = parseInt(x[i].age);
+      document.querySelector('#person_gender').value = (x[i].gender);
+      document.querySelector('#person_height').value = parseInt(x[i].height);
+      document.querySelector('#person_weight').value = parseInt(x[i].weight);
+      document.querySelector('#'+x[i].activityFactor).checked = true;
     }
+  }
+  }
 }
 
-function getWinDim()
-{
-    var body = document.documentElement || document.body;
 
-    return {
-        x: window.innerWidth  || body.clientWidth,
-        y: window.innerHeight || body.clientHeight
-    }
-}
+
 
 //Listener for viewport width changes
 function width(x) {
@@ -570,9 +565,9 @@ function setup()
          activityFactor = 1.72;
         else if(activityFactor_string == "veryheavy")
          activityFactor = 1.9;  
-        
-         console.log(activityFactor);
-          
+         
+        console.log(activityFactor);
+           
          if(gender != "male" && gender != "female")
            genderFlag = 1;
 
@@ -590,6 +585,8 @@ function setup()
           height = parseInt(height1);
           weight = parseInt(weight1);
           gender = gender.charAt(0).toUpperCase() + gender.slice(1); 
+
+         
           console.log(gender);
           flag = 1;
           var flaguserExists = 0;
@@ -694,7 +691,21 @@ function setup()
 
          if(!flaguserExists)
          { 
-          personalDetailsSubmitFlag = 1;
+          var local_backup_userdata = {user:user,age:age,height:height,weight:weight,gender:gender,activityFactor:activityFactor_string};
+          
+           if(!localStorage.getItem('personal_details'))
+            { 
+              var arr =[];
+              arr.push(local_backup_userdata);
+              localStorage.setItem('personal_details',JSON.stringify(arr));
+            }
+            else
+            {
+              var arr = JSON.parse(localStorage.getItem('personal_details'))
+              arr.push(local_backup_userdata);
+              localStorage.setItem('personal_details',JSON.stringify(arr));
+            }  
+           personalDetailsSubmitFlag = 1;
            if(window.innerWidth > 992)
            {
             var breakfast_table = document.querySelector(".breakfast");

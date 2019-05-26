@@ -318,7 +318,8 @@ hr{
 .personal_details
 {
     width:100%;
-    background-color: #eee;
+    background-color:rgba(238,238,238,0.8);
+
 
 }
 .Personal_details_button
@@ -398,7 +399,7 @@ hr
 }
 .choice
 {
-    background-color: #eee;
+    background-color:rgba(238,238,238,0.8);
     font-size: 25px;
 }
 
