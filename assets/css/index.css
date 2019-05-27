@@ -201,10 +201,10 @@ input[type=text]:focus{
 {
     margin:50px;
 }
-.container > button
+.container > div > button
 {   
-    margin-top: 50px;
-    margin-left: 45%;
+   
+   
     height:40px;
     width:150px;
     background-color:#2980B9;
@@ -218,10 +218,35 @@ input[type=text]:focus{
 .table
 {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
     grid-gap: 0.1em;
     
     
+}
+.button_set_table
+{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+#bf_button
+{
+    margin-left:35%;
+}
+#ln_button
+{
+    margin-left:30%;
+}
+#dn_button
+{
+    margin-left:30%;
+}
+
+.empty
+{
+    width:30px;
+    height:30px;
 }
 .ele
 {
@@ -476,16 +501,19 @@ input[type = "radio"]:checked
    {
       
        flex-direction: column;
+       margin:15px;
    }
    .form_set2 
    {
       
        flex-direction: column;
+       margin:15px;
    }
    .form_set3 
    {
       
        flex-direction: column;
+       margin:15px;
    }
    #water
    {

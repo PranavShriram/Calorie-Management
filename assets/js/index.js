@@ -55,11 +55,18 @@ function width(x) {
     var dn_button = document.querySelector('#dn_button');
     var sidebar = document.querySelector("#sidebar");
     var form = document.querySelector('.input_form');
+    var bf_table_delete = document.querySelector('#bf_table_delete');
+    var ln_table_delete = document.querySelector('#ln_table_delete');
+    var dn_table_delete = document.querySelector('#dn_table_delete');
+    
    
     var canvas = document.querySelector('#my_canvas');
     var analytics_container = document.querySelector(".analytics")
      
-    
+     ln_table_delete.style.display = "";
+     dn_table_delete.style.display = "";
+     dn_table_delete.parentNode.style.display = "";
+     ln_table_delete.parentNode.style.display = "";
      lunch_table.style.display = "" ;
      dinner_table.style.display = "" ;
      ln_button.style.display  = "";
@@ -86,8 +93,16 @@ function width(x) {
     var sidebar = document.querySelector('#sidebar');
     var sidebar_li = document.querySelectorAll('li');
     var canvas = document.querySelector('#my_canvas');
-    var analytics_container = document.querySelector(".analytics")
-     
+    var analytics_container = document.querySelector(".analytics");
+    var bf_table_delete = document.querySelector('#bf_table_delete');
+    var ln_table_delete = document.querySelector('#ln_table_delete');
+    var dn_table_delete = document.querySelector('#dn_table_delete');
+    
+    
+    ln_table_delete.style.display = "none";
+    dn_table_delete.style.display = "none";
+    ln_table_delete.parentNode.style.display = "none";
+    dn_table_delete.parentNode.style.display = "none";
     sidebar.style.display = "";
     breakfast_table.style.display = "";
 
@@ -137,7 +152,6 @@ function wrapRow(row_a)
   res_string += "<div class = 'ele'>" + row_a.sugar + "</div>";
   res_string += "<div class = 'ele'>" + row_a.sodium + "</div>";
   res_string += "<div class = 'ele'>" +row_a.water + "</div>";
-
   return res_string;
 }
 
@@ -533,6 +547,9 @@ function setup()
     var analytics_container = document.querySelector(".analytics");
     var canvas = document.querySelector("#my_canvas");
     var clear_btn = document.querySelector('#clear');
+    var bf_table_delete = document.querySelector('#bf_table_delete');
+    var ln_table_delete = document.querySelector('#ln_table_delete');
+    var dn_table_delete = document.querySelector('#dn_table_delete');
     
     clear_btn.addEventListener("click",function()
     {
@@ -652,6 +669,12 @@ function setup()
                  canvas.style.display = "";
                  personalDetailsForm.style.display = "none";
                  personalDetailsButton.style.display = "none";
+                 bf_table_delete.style.display = "";
+                 ln_table_delete.style.display = "";
+                 dn_table_delete.style.display = "";
+                 bf_table_delete.parentNode.style.display = "";
+                 ln_table_delete.parentNode.style.display = "";
+                 dn_table_delete.parentNode.style.display = "";
                  renderSmallScreenAnalytics();
                  callPiechart();
                  setupFlashMessage();
@@ -671,7 +694,10 @@ function setup()
                 var canvas = document.querySelector('#my_canvas');
                  var analytics_container = document.querySelector(".analytics") 
                 breakfast_table.style.display = "";
+                bf_table_delete.parentNode.style.display = "";
+             
                 bf_button.style.display = "";
+                bf_table_delete.style.display = "";
                 personalDetailsForm.style.display = "none";
                 personalDetailsButton.style.display = "none";
                 sidebar.style.display = "";
@@ -716,13 +742,15 @@ function setup()
              var dn_button = document.querySelector('#dn_button');
              var sidebar = document.querySelector("#sidebar");
              var form = document.querySelector('.input_form');
-
             var canvas = document.querySelector('#my_canvas');
              var analytics_container = document.querySelector(".analytics") 
             
 
             breakfast_table.style.display = "";
             bf_button.style.display = "";
+            bf_table_delete.style.display = "";
+            bf_table_delete.parentNode.style.display = "";
+           
             personalDetailsForm.style.display = "none";
             personalDetailsButton.style.display = "none";
             sidebar.style.display = "";
@@ -754,6 +782,9 @@ function setup()
              canvas.style.display = "";  
              ln_button.style.display = "";
              dn_button.style.display = "";
+             bf_table_delete.style.display = "";
+             ln_table_delete.style.display = "";
+             dn_table_delete.style.display = "";
              analytics_container.style.display = "";
              personalDetailsForm.style.display = "none";
              personalDetailsButton.style.display = "none";
@@ -797,9 +828,11 @@ function setup()
                    container.style.display = "";
                    breakfast_table.style.display = "" ;
                    bf_button.style.display = "";
+                   bf_table_delete.style.display = "";
+                   bf_table_delete.parentNode.style.display = "";
                    lunch_table.style.display = "none" ;
                    dinner_table.style.display = "none" ;
-                 
+                  
     
                   lunch_table.style.display = "none" ;
                   dinner_table.style.display = "none" ;
@@ -807,6 +840,11 @@ function setup()
                     dn_button.style.display = "none";
                    canvas.style.display = "none";  
                    ln_button.style.display = "none";
+                   ln_table_delete.style.display = "none";
+                   dn_table_delete.style.display = "none";
+                  
+                   ln_table_delete.parentNode.style.display = "none";
+                   dn_table_delete.parentNode.style.display = "none";
                    dn_button.style.display = "none";
                    analytics_container.style.display = "none";
                    form.style.display = "none";
@@ -817,11 +855,16 @@ function setup()
               {   
                 container.style.display = "";
                   lunch_table.style.display = "";
-                  ln_button.style.display = "";   
-
+                  ln_button.style.display = ""; 
+                  ln_table_delete.style.display = "";  
+                  ln_table_delete.parentNode.style.display = "";
+                  bf_table_delete.parentNode.style.display = "none";
+                  dn_table_delete.parentNode.style.display = "none";
                  breakfast_table.style.display = "none" ;
                  dinner_table.style.display = "none" ;
                  bf_button.style.display ="none";
+                 bf_table_delete.style.display = "none";
+                 dn_table_delete.style.display = "none";
                  dn_button.style.display ="none";
                  analytics_container.style.display = "none";
                  form.style.display = "none";
@@ -832,11 +875,16 @@ function setup()
                 container.style.display = "";  
                 lunch_table.style.display = "none";
                 ln_button.style.display = "none";   
-
+                dn_table_delete.parentNode.style.display = "";
+                bf_table_delete.parentNode.style.display = "none";
+                ln_table_delete.parentNode.style.display = "none";
                  breakfast_table.style.display = "none" ;
                  dinner_table.style.display = "" ;
                  bf_button.style.display = "none";
                  dn_button.style.display = "";
+                 bf_table_delete.style.display = "none";
+                 ln_table_delete.style.display = "none";
+                 dn_table_delete.style.display = "";
                  form.style.display = "none";
                  analytics_container.style.display = "none";
                  canvas.style.display = "none";
@@ -845,6 +893,12 @@ function setup()
               else if(text == "View Analytics")
               {
                  container.style.display = "";  
+                 bf_table_delete.style.display = "none";
+                 ln_table_delete.style.display = "none";
+                 dn_table_delete.style.display = "none";
+                 bf_table_delete.parentNode.style.display = "none";
+                 ln_table_delete.parentNode.style.display = "none";
+                 dn_table_delete.parentNode.style.display = "none";
                  lunch_table.style.display = "none";
                  ln_button.style.display = "none";   
                  breakfast_table.style.display = "none";
@@ -858,6 +912,51 @@ function setup()
               }
         });
     }
+    bf_table_delete.addEventListener("click",function()
+    {
+          var x =JSON.parse(localStorage.getItem(user));
+          x.breakfast = [];
+          localStorage.setItem(user,JSON.stringify(x));
+          list_bf = [];
+          if(window.innerWidth <= 992)
+          {
+            render_smallscreen();
+          }
+          else
+          {
+            render();
+          }
+    });
+    ln_table_delete.addEventListener("click",function()
+    {
+          var x =JSON.parse(localStorage.getItem(user));
+          x.lunch = [];
+          localStorage.setItem(user,JSON.stringify(x));
+          list_ln = [];
+          if(window.innerWidth <= 992)
+          {
+            render_smallscreen();
+          }
+          else
+          {
+            render();
+          }
+    });
+    dn_table_delete.addEventListener("click",function()
+    {
+          var x =JSON.parse(localStorage.getItem(user));
+          x.dinner = [];
+          localStorage.setItem(user,JSON.stringify(x));
+          list_dn = [];
+          if(window.innerWidth <= 992)
+          {
+            render_smallscreen();
+          }
+          else
+          {
+            render();
+          }
+    });
 
     bf_button.addEventListener("click",function()
     {
@@ -923,7 +1022,7 @@ function setup()
                    list_ln.push(row_a);
                    local_backup.lunch = list_ln;
                }  
-            else
+            else if(currentSubmit === "dinner")
              {
                list_dn.push(row_a);
                local_backup.dinner = list_dn;
@@ -971,11 +1070,17 @@ function initialize()
     var dn_button = document.querySelector('#dn_button');
     var sidebar = document.querySelector("#sidebar");
     var form = document.querySelector('.input_form');
+    var bf_table_delete = document.querySelector('#bf_table_delete');
+    var ln_table_delete = document.querySelector('#ln_table_delete');
+    var dn_table_delete = document.querySelector('#dn_table_delete');
    
     var canvas = document.querySelector('#my_canvas');
     var analytics_container = document.querySelector(".analytics")
      
-   
+     
+    bf_table_delete.style.display = "none";
+    ln_table_delete.style.display = "none";
+    dn_table_delete.style.display = "none";
      lunch_table.style.display = "none" ;
      dinner_table.style.display = "none" ;
      ln_button.style.display  = "none";
@@ -986,6 +1091,9 @@ function initialize()
      canvas.style.display = "none";
      analytics_container.style.display = "none";
       form.style.display = "none"; 
+      bf_table_delete.parentNode.style.display = "none";
+      ln_table_delete.parentNode.style.display = "none";
+      dn_table_delete.parentNode.style.display = "none";
      document.querySelector(".navbar-right-smallscreen").classList.add('display_none');
  
   
